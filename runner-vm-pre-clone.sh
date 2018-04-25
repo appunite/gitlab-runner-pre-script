@@ -20,6 +20,9 @@ xcodebuild -version
 # Set bigger post buffer because of early EOF issue and increase alive interval
 # https://docs.gitlab.com/ee/topics/git/troubleshooting_git.html#increase-the-post-buffer-size-in-git
 
+brew install git 
+git --version 
+
 cat <<EOF >>~/.ssh/config
 
 echo "Increasing alive interval / count max"
