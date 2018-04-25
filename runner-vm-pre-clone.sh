@@ -17,7 +17,15 @@ xcrun swift -version
 echo -e "--- Xcodebuild version:"
 xcodebuild -version
 
-# Set bigger post buffer because of early EOF issue 
-# https://stackoverflow.com/questions/24952683/git-push-error-rpc-failed-result-56-http-code-200-fatal-the-remote-end-hun?rq=1
+# Set bigger post buffer because of early EOF issue and increase alive interval
+# https://docs.gitlab.com/ee/topics/git/troubleshooting_git.html#increase-the-post-buffer-size-in-git
 
-git config --global http.postBuffer 524288000
+cat <<EOF >>~/.ssh/config
+
+echo "Increasing alive interval / count max"
+Host git.appunite.com
+  ServerAliveInterval 60
+  ServerAliveCountMax 5
+EOF
+
+git config --global http.postBuffer 1048576000
