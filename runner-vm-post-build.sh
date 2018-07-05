@@ -4,6 +4,7 @@ if [ -z $SKIP_RUNNER_CACHE ]; then
 	echo "--- Uploading cache started..."
 else
 	echo "--- Skipping runner cache uploading"
+	exit 0
 fi
 
 # check if AUTO_CLOSE_TOKEN is not nil
