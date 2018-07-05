@@ -1,9 +1,13 @@
 #!/bin/bash
 
-echo "--- Downloading cache started..."
+if [ -z $SKIP_RUNNER_CACHE ]; then
+	echo "--- Downloading cache started..."
+else
+	echo "--- Skipping runner cache downloading"
+fi
 
 # check if AUTO_CLOSE_TOKEN is not nil
-if [ -z $AUTO_CLOSE_TOKEN ]; then 
+if [ -z $AUTO_CLOSE_TOKEN ]; then
 	echo "--- AUTO_CLOSE_TOKEN variable is unset, exiting..."
 	exit 0
 fi

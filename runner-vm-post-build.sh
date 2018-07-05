@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "--- Uploading cache started..."
+if [ -z $SKIP_RUNNER_CACHE ]; then 
+	echo "--- Uploading cache started..."
+else
+	echo "--- Skipping runner cache uploading"
+fi
 
 # check if AUTO_CLOSE_TOKEN is not nil
 if [ -z $AUTO_CLOSE_TOKEN ]; then 
