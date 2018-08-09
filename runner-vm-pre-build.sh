@@ -33,12 +33,18 @@ if [ -z $SKIP_RUNNER_CACHE ]; then
 		echo "--- Loading pods cache..."
 		time cp ${CACHE_PATH}/${PODS_ARCHIVE} $PODS_ARCHIVE
 		time openssl enc -aes-256-cbc -k $AUTO_CLOSE_TOKEN -d -in $PODS_ARCHIVE | pbzip2 -dc | tar xf -
+
+		PODS_CHECKSUM_PATH="$CACHE_PATH/Podfile.checksum"
+		export CACHED_PODFILE_LOCK_CHECKSUM=`test -s $PODS_CHECKSUM_PATH && cat $PODS_CHECKSUM_PATH`
 	fi
 
 	if [ -e ${CACHE_PATH}/${GEMS_ARCHIVE} ]; then
 		echo "--- Loading gems cache..."
 		time cp ${CACHE_PATH}/${GEMS_ARCHIVE} $GEMS_ARCHIVE
 		time openssl enc -aes-256-cbc -k $AUTO_CLOSE_TOKEN -d -in $GEMS_ARCHIVE | pbzip2 -dc | tar xf -
+
+		BUNDLE_CHECKSUM_PATH="$CACHE_PATH/Gemfile.checksum"
+		export CACHED_GEMFILE_LOCK_CHECKSUM=`test -s $BUNDLE_CHECKSUM_PATH && cat $BUNDLE_CHECKSUM_PATH`
 	fi
 
 	echo "--- Downloading cache finished..."
