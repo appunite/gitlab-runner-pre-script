@@ -49,6 +49,8 @@ if [ -z $SKIP_RUNNER_CACHE ]; then
 		time openssl enc -aes-256-cbc -k $AUTO_CLOSE_TOKEN -d -in $GEMS_ARCHIVE | pbzip2 -dc | tar xf -
 	else
 	  echo "--- Skipping Gems cache. Gemfile.lock checksum is not valid anymore."
+	  echo "local gemfile: $GEMFILE_LOCK_CHECKSUM"
+	  echo "cached gemfile: $(cat $BUNDLE_CHECKSUM_PATH)"
 	fi
 
 	echo "--- Downloading cache finished..."
