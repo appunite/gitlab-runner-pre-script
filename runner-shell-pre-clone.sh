@@ -6,6 +6,9 @@ curl -kfsSL curl.haxx.se/ca/cacert.pem -o "$(ruby -ropenssl -e 'puts OpenSSL::X5
 echo -e "--- CPU:"
 sysctl -n machdep.cpu.brand_string
 
+echo -e "--- System version:"
+sw_vers
+
 echo -e "--- Swift version:"
 xcrun swift -version
 
