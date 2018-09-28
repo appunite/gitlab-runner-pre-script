@@ -39,6 +39,3 @@ if [ -z $SKIP_RUNNER_CACHE ]; then
 else
 	echo "--- Skipping runner cache uploading"
 fi
-
-echo "--- Umounts all currently-mounted filesystems of the type NFS..."
-sudo umount -A -t nfs
