@@ -8,6 +8,9 @@ date
 echo -e "--- Updating CA cert..."
 sudo curl -kfsSL curl.haxx.se/ca/cacert.pem -o "$(ruby -ropenssl -e 'puts OpenSSL::X509::DEFAULT_CERT_FILE')"
 
+echo -e "--- System version:"
+sw_vers
+
 echo -e "--- CPU:"
 sysctl -n machdep.cpu.brand_string
 
