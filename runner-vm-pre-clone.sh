@@ -2,7 +2,7 @@
 
 echo -e "--- Updating time&date..."
 sudo systemsetup setusingnetworktime off > /dev/null 2>&1
-sudo ntpdate -u time.apple.com > /dev/null 2>&1
+sudo sntp -sS time.apple.com > /dev/null 2>&1
 date
 
 echo -e "--- Updating CA cert..."
