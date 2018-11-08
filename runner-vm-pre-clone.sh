@@ -17,6 +17,9 @@ dig git.appunite.com
 echo -e "--- Add git.appunite.com to hosts"
 sudo -- sh -c "echo 136.243.171.167 git.appunite.com >> /etc/hosts"
 
+echo -e "--- Sleep for a while"
+sleep 15
+
 echo -e "--- CPU:"
 sysctl -n machdep.cpu.brand_string
 
