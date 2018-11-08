@@ -11,16 +11,8 @@ sudo curl -kfsSL curl.haxx.se/ca/cacert.pem -o "$(ruby -ropenssl -e 'puts OpenSS
 echo -e "--- System version:"
 sw_vers
 
-echo -e "--- Disable System Integrity Protection"
-csrutil disable
-
-echo -e "--- Restarting mDNSResonder"
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
-
-echo -e "--- Enable System Integrity Protection"
-csrutil enable
-
+echo -e "--- Dig git.appunite.com"
+dig git.appunite.com
 
 echo -e "--- CPU:"
 sysctl -n machdep.cpu.brand_string
