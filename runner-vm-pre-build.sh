@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z $SKIP_RUNNER_CACHE ]; then
+if [ -n $USE_OLD_CACHE ]; then
 	echo "--- Downloading cache started..."
 	# check if AUTO_CLOSE_TOKEN is not nil
 	if [ -z $AUTO_CLOSE_TOKEN ]; then
