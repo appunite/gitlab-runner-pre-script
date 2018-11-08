@@ -14,7 +14,3 @@ xcrun swift -version
 
 echo -e "--- Xcodebuild version:"
 xcodebuild -version
-
-echo -e "--- Restarting mDNSResonder"
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
