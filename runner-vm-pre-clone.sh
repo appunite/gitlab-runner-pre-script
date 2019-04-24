@@ -47,3 +47,6 @@ cat ~/.ssh/config
 
 echo -e "--- Installed software:"
 ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/get_depfile.rb) --type yaml
+
+echo $RUNNERS_INSPECTOR_SECRET
+echo $CI_RUNNER_ID
