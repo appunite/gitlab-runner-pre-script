@@ -46,7 +46,7 @@ git config --global http.postBuffer 1048576000
 cat ~/.ssh/config
 
 echo -e "--- Installed software:"
-ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/get_depfile.rb) --type yaml
+ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/get_depfile.rb) --type yaml || true
 
 echo -e "--- Submitting installed software:"
-ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/post_depfile.rb)
+ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/post_depfile.rb) || true
