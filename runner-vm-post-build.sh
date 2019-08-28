@@ -1,4 +1,3 @@
 #!/bin/bash
 
-echo "Skipping runner cache uploading"
-echo "moved to: https://git.appunite.com/appuniterd/ios/blob/master/bootstrap-project.md#makefile"
+ruby <(curl -fsSL https://git.appunite.com/szymon.mrozek/macos-image-dependencies/raw/master/post_intest_report.rb) || true
